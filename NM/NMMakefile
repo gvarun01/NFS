@@ -1,0 +1,20 @@
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Wextra -g
+
+# Source files
+SRCS = ../LinkedList.c bookKeeping.c cache.c connection.c handleRequest.c handlers.c namingServer.c Trie.c
+
+# Output executable
+TARGET = NS
+
+# Default rule to build and run
+all: $(TARGET)
+	./$(TARGET) $(ARGS)
+
+$(TARGET): $(SRCS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRCS)
+
+# Rule to clean up the build
+clean:
+	rm -f $(TARGET) *.o

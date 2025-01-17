@@ -1,0 +1,16 @@
+# Compiler and flags
+CC = gcc
+
+# Source files
+SRCS = storageServer.c SS_NM.c SS_SS.c SS_Client.c SS_Backup.c SS_paths.c ../LinkedList.c SS_try.c
+
+# Output executable
+TARGET = storageServer
+
+# Build rule
+all:
+	$(CC) $(SRCS) -o $(TARGET)
+
+# Clean rule
+clean:
+	rm -f $(TARGET)
